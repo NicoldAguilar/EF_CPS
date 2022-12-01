@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Poker Game</h1>
+    <form action="/home/generar" method="post">
+        <tr>
+            <h4>Carta 1</h4>
+            <th><input name="C1" id="CA1_1">Carta </input></th>
+            <th><input name="P1" id="CA1_2">Palo </input></th>
+            <h4>Carta 2</h4>
+            <th><input name="C2" id="CA2_1">Carta </input></th>
+            <th><input name="P2" id="CA2_2">Palo </input></th>
+            <h4>Carta 3</h4>
+            <th><input name="C3" id="CA3_1">Carta </input></th>
+            <th><input name="P3" id="CA3_2">Palo </input></th>
+            <h4>Carta 4</h4>
+            <th><input name="C4" id="CA4_1">Carta </input></th>
+            <th><input name="P4" id="CA4_2">Palo </input></th>
+            <h4>Carta 5</h4>
+            <th><input name="C5" id="CA5_1">Carta </input></th>
+            <th><input name="P5" id="CA5_2">Palo </input></th>            
+        </tr>
+        
+        <button class="btn btn-primary" id="Botoncito">Registrar Carta</button>
+        
+    </form>
+    <table class="table">
+        <thead>
+        <tr>            
+            <th>Cartas</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Numero @item.Palo</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    
+    <h1 id="JuegoRes">Jugada: @ViewBag.Jugada</h1>
+</div>
